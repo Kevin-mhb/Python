@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date    : 2017-07-21 14:55:09
+# @Author  : kevin ma (mahaibin97@gmail.com)
+# @Link    : http://www.aduxingzhe.com
+# @Version : $Id$
+
 #多文件合并实例
 #将联系人的姓名、电话、邮箱做到一个文件中
 

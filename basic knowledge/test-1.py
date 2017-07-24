@@ -8,7 +8,7 @@ txt0=file2.read()
 file2.close()
 print(txt0)
 
-
+'''
 
 def main():
       fname=input("Enter file's name :\n")
@@ -19,6 +19,3 @@ def main():
       
 main()
 
-'''
-
-f1=input("llll").strip()

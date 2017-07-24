@@ -1,4 +1,5 @@
 #将普通的文件操作利用函数实现
+
 '''
 file2=open("file-1.txt","w")
 file2.write("python is a very excellent programing language .")

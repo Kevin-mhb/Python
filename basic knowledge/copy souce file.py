@@ -1,4 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date    : 2017-07-21 14:55:09
+# @Author  : kevin ma (mahaibin97@gmail.com)
+# @Link    : http://www.aduxingzhe.com
+# @Version : $Id$
+
+
 #通过遍历对文件进行copy
+#文件为test-1/2
 
 def main():
 
