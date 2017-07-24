@@ -1,0 +1,6 @@
+Hello world.
+
+Python is good .
+
+The programing is fun .
+'Hello \nworld \n good'

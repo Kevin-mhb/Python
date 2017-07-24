@@ -1,4 +1,5 @@
 #统计词频(English essay)
+#文件名：Eglish essay.txt
 
 import turtle
  
