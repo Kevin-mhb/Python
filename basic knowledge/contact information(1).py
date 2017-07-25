@@ -23,7 +23,7 @@ def main():
  
         ###开始处理###
         lines = []
-        lines.append('姓名\t    电话          \t             邮箱\n')
+        lines.append('姓名\t    邮箱          \t             电话\n')
  
         for key in dic1:
             s= ''
