@@ -63,7 +63,7 @@ def main():
     ftele1.close()
     ftele2.close()
  
-    print("The addressBooks are merged!")
+    print("The addressBooks are merged!\nYou can watch AdderssBook in folder.\n")
  
 if __name__ == "__main__":
     main()
