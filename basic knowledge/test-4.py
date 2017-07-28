@@ -1,7 +1,7 @@
 import turtle
 
 #定义全局变量
-count=10
+count=20
 data=[]
 words=[]
 yScale=6

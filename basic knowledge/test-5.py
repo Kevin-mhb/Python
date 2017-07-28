@@ -1,7 +1,7 @@
 
 data=[]
 words=[]
-count=10
+count=20
 
 def processLine(line,wordCounts):
 	line=replacePunctuations(line)

@@ -1,7 +1,7 @@
-
 data=[]
 words=[]
-count=10
+count=20
+
 
 def processLine(line,wordCounts):
 	line=replacePunctuations(line)
@@ -39,6 +39,7 @@ def main():
           words.append(items[i][1])
 
       infile.close()
+
 
 if __name__ == '__main__':
     main()
