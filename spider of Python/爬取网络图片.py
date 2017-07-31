@@ -1,8 +1,8 @@
 import requests
 import os
 
-url="http://image.nationalgeographic.com.cn/2015/1026/20151026120947696.jpg"
-root="C://Users//马海斌//Desktop//文件//movies & photos//图片//"
+url="https://youtu.be/AlhRt-I00Lc"
+root="C://Users//马海斌//Desktop//文件//movies & photos//"
 path=root+url.split('/')[-1]
 
 try:
