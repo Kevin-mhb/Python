@@ -19,4 +19,4 @@ for link in soup.find_all(id=re.compile('link')):
 
 
 #find_all()方法中的五个参数---string
-soup.find_all(string=re.compile("pyhton"))
+soup.find_all(string=re.compile("Pyhton"))
