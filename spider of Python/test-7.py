@@ -6,3 +6,7 @@ demo=r.text
 
 soup=BeautifulSoup(demo,"html.parser")
 print(soup.prettify())
+print("\n\n")
+for parent in soup.p.parents:
+
+      print(parent)
