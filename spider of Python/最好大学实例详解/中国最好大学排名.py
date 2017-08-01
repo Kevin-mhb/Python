@@ -31,7 +31,7 @@ def main():
       url="http://www.zuihaodaxue.cn/dingjianrencaipaiming2017.html"
       html=gethtml(url)
       fillu(uinfo,html)
-      printu(uinfo,30)
+      printu(uinfo,50)
 
 
 main()

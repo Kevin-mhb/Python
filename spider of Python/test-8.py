@@ -25,7 +25,7 @@ def fillUnivList(ulist,html):
 
 def printUnivList(ulist,num):
 	print("{:^20}\t{:^12}\t{:^20}".format("排名","学校名称","总分"))
-    for i in range(num):
+	for i in range(num):
     	u=ulist[i]
     	print("{:^20}\t{:^12}\t{:^20}".format(u[0],u[1],u[2]))
 
