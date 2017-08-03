@@ -32,5 +32,5 @@ print(link1.name,link1['href'],link1.get_text())
 
 
 print("\nI will take the link of 'p':\n")
-link2=soup.find('p',class='title')
+link2=soup.find('p',class_='title')
 print(link2.name,link2.get_text())
