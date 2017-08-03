@@ -27,6 +27,10 @@ for link in links:
 	print(link.name,link['href'],link.get_text())
 
 print("\nI will take the link of 'lacie':\n")
-
 link1=soup.find('a',href="http://example.com/lacie")
 print(link1.name,link1['href'],link1.get_text())
+
+
+print("\nI will take the link of 'p':\n")
+link2=soup.find('p',class='title')
+print(link2.name,link2.get_text())
