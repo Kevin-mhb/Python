@@ -1,7 +1,9 @@
 import requests
 import os
 
-url="https://youtu.be/AlhRt-I00Lc"
+#video's address:http://baishi.baidu.com/watch/06566430729376990497.html?&recFrom=site&list=24
+
+url="http://baishi.baidu.com/watch/06566430729376990497.html?&recFrom=site&list=24"
 root="C://Users//马海斌//Desktop//文件//movies & photos//"
 path=root+url.split('/')[-1]
 
@@ -18,3 +20,4 @@ try:
 		print("文件已存在")
 except:
 	print("爬取失败")
+
