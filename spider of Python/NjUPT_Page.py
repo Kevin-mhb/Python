@@ -14,8 +14,10 @@ def getPage(url):
 def accessHtml(html):
       soup=BeautifulSoup(html,"html.parser")
 
-      txt=soup.meta.string
-      print(txt)
+      for meta in soup.find_all('head'):
+            tag=meta
+            print("\n\nThe txt of meta's string:\n")
+            print(tag.string)
 
 
       #for child in soup.head.contents:
