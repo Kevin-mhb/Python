@@ -14,14 +14,13 @@ def getPage(url):
 def accessHtml(html):
       soup=BeautifulSoup(html,"html.parser")
 
-      for meta in soup.find_all('head'):
-            tag=meta
-            print("\n\nThe txt of meta's string:\n")
-            print(tag.string)
+      print(soup.meta.string)
+
+      print("\nI will take the link of 'lacie':\n")
+      link1=soup.find('meta',content=re.compile('800x6002017年6月25日（周日）'))
+      print(link1.name,link1['content'],link1.get_text())
 
 
-      #for child in soup.head.contents:
-       #     print(child.name,end='\t')
 
       #for meta in soup.find_all('head'):
        #     print(meta)
@@ -29,7 +28,7 @@ def accessHtml(html):
 def main():
       url="http://www.njupt.edu.cn/2017/0622/c72a108711/page.htm"
       html=getPage(url)
-      print("access the Page as following:\n")
+      #print("access the Page as following:\n")
       accessHtml(html)
       
 main()

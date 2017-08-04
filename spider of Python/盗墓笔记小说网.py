@@ -15,20 +15,11 @@ def getPage(url):
 def accessHtml(html):
 	soup=BeautifulSoup(html,'html.parser')
 
-	link=soup.find_all('--start-listColumn--')
-
-	'''
-	print(soup.prettify())
-		links0=soup.find_all('link')
-	for link in links0:
-		print(link.name,link['href'],link.get_text)
-
-	link1=soup.find('div',class_="wrapper" )
-	print(link1.name,link1.get_text())
-	'''
+	for fulu
+	
 
 def main():
-	url="http://www.njupt.edu.cn/72/list.htm"
+	url="http://seputu.com"
 	html=getPage(url)
 	accessHtml(html)
 
