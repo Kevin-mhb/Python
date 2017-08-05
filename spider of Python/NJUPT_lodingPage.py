@@ -12,24 +12,20 @@ def getPage(url):
 	except:
 		return "Error!\n"
 
-def accessHtml(html):
+def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
 
-	link=soup.find_all('--start-listColumn--')
-
-	'''
-	print(soup.prettify())
-		links0=soup.find_all('link')
-	for link in links0:
-		print(link.name,link['href'],link.get_text)
-
-	link1=soup.find('div',class_="wrapper" )
-	print(link1.name,link1.get_text())
-	'''
+	for child in soup.table.children:
+		print (child.name)
+		'''if isinstance(tbody,bs4.element.Tag):
+			tds=tbody('td')
+			newsList=ulist.append([tds[0].string,tds[1].string])
+			print(newsList)'''
 
 def main():
+	ulist=[]
 	url="http://www.njupt.edu.cn/72/list.htm"
 	html=getPage(url)
-	accessHtml(html)
+	accessHtml(html,ulist)
 
 main()

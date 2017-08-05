@@ -1,3 +1,6 @@
+
+#检索出南邮网页中的通知信息
+
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -11,6 +14,7 @@ def getPage(url):
             return r.content
       except:
             return "Faile"
+      
 def accessHtml(html):
       soup=BeautifulSoup(html,"html.parser")
 
