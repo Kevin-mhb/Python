@@ -16,7 +16,11 @@ def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
 
 	for content in soup.find_all('meta'):
-		print(content)
+		print
+
+	id_soup = BeautifulSoup('<p id="my id"></p>')
+	id_soup.p['id']
+# 'my id'
 
 def main():
 	ulist=[]

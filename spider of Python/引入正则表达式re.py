@@ -7,6 +7,8 @@ demo=r.text
 
 soup=BeautifulSoup(demo,"html.parser")
 
+print(soup.prettify())
+
 #find_all()方法中的五个参数---name
 for tag in soup.find_all(re.compile('b')):
 	print(tag.name)
