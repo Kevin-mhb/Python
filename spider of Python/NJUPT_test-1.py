@@ -385,7 +385,9 @@ for a in soup.find_all('a'):
 for link in soup.find_all('a'):
 	print("http://www.njupt.edu.cn"+link.get('href'),end="\n\n")
 
+
 '''
+
 ulist=[]
 for tbody in soup.find('table').descendants:
 	print(tbody.name)
@@ -394,5 +396,6 @@ for tbody in soup.find('table').descendants:
 		
 		ulist.append([tds[0].string,tds[1].string,tds[3].string]+"\n")
 
-print(ulist)       
+print(ulist)   
+
 '''
