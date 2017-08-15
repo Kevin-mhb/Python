@@ -1,3 +1,5 @@
+#抓取南邮通知中心的通知列表，并且输出连接
+
 import requests
 import re
 import bs4
@@ -15,12 +17,16 @@ def getPage(url):
 def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
 
+	for a in soup.find_all('a'):
+		print(a.string,end="\n\n")
+
+	'''
 	for child in soup.table.children:
 		print (child.name)
-		'''if isinstance(tbody,bs4.element.Tag):
-			tds=tbody('td')
-			newsList=ulist.append([tds[0].string,tds[1].string])
-			print(newsList)'''
+	if isinstance(tbody,bs4.element.Tag):
+		tds=tbody('td')
+		newsList=ulist.append([tds[0].string,tds[1].string])
+		print(newsList)'''
 
 def main():
 	ulist=[]

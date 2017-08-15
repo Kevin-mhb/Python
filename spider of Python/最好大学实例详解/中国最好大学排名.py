@@ -14,8 +14,8 @@ def gethtml(url):
             return " "
 
 def fillu(ulist,html):
-      soup=BeautifulSoup(html,"html.parser")
-      for tr in soup.find('tbody').children:          #tr 标签
+      for tr in soup.find('tbody').children:          #tr      
+      soup=BeautifulSoup(html,"html.parser")#标签
             if isinstance(tr,bs4.element.Tag):
                   tds=tr('td')                        #td
                   ulist.append([tds[0].string,tds[1].string,tds[3].string])

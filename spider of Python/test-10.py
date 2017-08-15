@@ -17,7 +17,7 @@ def fillList(html,ulist):
       for tr in soup.find("tbody").children:
             if isinstance(td,bs4.element.Tag):
                   tds=tr('td')
-                  ulist.append([tds[0].string,tds[1].string,tds[2].string])
+                  ulist.append([tds[0].string,tds[1].string,tds[3].string])
 
 def printList(uinfo,num):
       tplt="{0:^10}\t{1:{3}^10}\t{2:^10}"
