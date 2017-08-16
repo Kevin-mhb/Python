@@ -379,7 +379,7 @@ soup=BeautifulSoup(html_doc,"html.parser")
 print(soup.prettify(),end="\n\n\n")
 
 for a in soup.find_all('a'):
-	print(a.string,end="\n\n")
+    print(a.string,end="\n\n")
 
 #提取链接
 for link in soup.find_all('a'):

@@ -20,6 +20,9 @@ def accessHtml(html,ulist):
 	for a in soup.find_all('a'):
 		print(a.string,end="\n\n")
 
+	for link in soup.find_all('a'):
+		print(list("http://www.njupt.edu.cn"+link.get('href'),end="\n\n"))
+
 	'''
 	for child in soup.table.children:
 		print (child.name)

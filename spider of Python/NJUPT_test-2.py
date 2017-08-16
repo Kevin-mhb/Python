@@ -16,15 +16,12 @@ def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
 
 	for content in soup.find_all('meta'):
-		print
+		print(content.string)
 
-	id_soup = BeautifulSoup('<p id="my id"></p>')
-	id_soup.p['id']
-# 'my id'
 
 def main():
 	ulist=[]
-	url="http://www.njupt.edu.cn/2017/0606/c72a107204/page.htm"
+	url="http://www.njupt.edu.cn/2017/0622/c72a108725/page.htm"
 	html=getPage(url)
 	accessHtml(html,ulist)
 
