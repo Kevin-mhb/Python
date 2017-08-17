@@ -17,19 +17,21 @@ def getPage(url):
 def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
 
-	for a in soup.find_all('a'):
-		print(a.string,end="\n\n")
+	for tbody in soup.find_all(class_="listColumn wrapper"):
+		for a in soup.find_all('a'):
+			print(a.string)
+		for link in soup.find_all('a'):
+	   		print("http://www.njupt.edu.cn"+link.get('href'))
 
-	for link in soup.find_all('a'):
-		print(list("http://www.njupt.edu.cn"+link.get('href'),end="\n\n"))
-
+    
 	'''
 	for child in soup.table.children:
 		print (child.name)
 	if isinstance(tbody,bs4.element.Tag):
 		tds=tbody('td')
 		newsList=ulist.append([tds[0].string,tds[1].string])
-		print(newsList)'''
+		print(newsList)
+	'''
 
 def main():
 	ulist=[]
