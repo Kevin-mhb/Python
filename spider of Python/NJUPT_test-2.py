@@ -14,14 +14,24 @@ def getPage(url):
 
 def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
+	count1=0
+	count2=0
 
-	for content in soup.find_all('meta'):
-		print(content.string)
+	for tbody in soup.find_all(class_="listColumn wrapper"):
+		for a in soup.find_all('a'):
+			count1=count1+1
+			print("["+count1+"]\t")
+			print(a.string)
+		for link in soup.find_all('a'):
+			count2=count2+1
+			print("["+count1+"]\t")
+	   		print("http://www.njupt.edu.cn"+link.get('href'))
+
 
 
 def main():
 	ulist=[]
-	url="http://www.njupt.edu.cn/2017/0622/c72a108725/page.htm"
+	url="http://www.njupt.edu.cn/72/list.htm"
 	html=getPage(url)
 	accessHtml(html,ulist)
 
