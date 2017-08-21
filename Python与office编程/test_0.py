@@ -10,6 +10,7 @@ work=xlsxwriter.Workbook("text_0.xlsx")#文件名+路径
 chart=work.add_chart({'type':'column'})
 
 #column柱状图、area面积图、bar条形图、line折线图、radar雷达图
+#不可以添加空图表
 
 #2.创建一个表格
 worksheet=work.add_worksheet("while")
@@ -24,6 +25,7 @@ for i,j in enumerate(title):
 for i,j in enumerate(data):
 	point="C%d"%(i+1)
 	worksheet.write(point,j)
+	
 #为图表添加数据
 chart.add_series(
 	{
@@ -53,7 +55,6 @@ worksheet.write("A1","while",bold)
 worksheet.write("A3",2,bold)
 worksheet.write("A4",34,bold)
 worksheet.write("A5","=SUM(A3:A4)",bold)
-
 
 
 
