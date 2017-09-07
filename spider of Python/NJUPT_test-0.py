@@ -25,7 +25,7 @@ def accessHtml(html,ulist):
 
 def main():
 	ulist=[]
-	url="http://www.njupt.edu.cn/72/list.htm"
+	url="http://jwc.njupt.edu.cn/1594/list.htm"
 	html=getPage(url)
 	accessHtml(html,ulist)
 
