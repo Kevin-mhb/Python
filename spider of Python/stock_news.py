@@ -1,3 +1,8 @@
+source:
+      http://news.cnstock.com/news/sns_yw/index.html
+      view-source:http://news.cnstock.com/news/sns_yw/index.html  (html文档)
+
+
 import requests
 from bs4 import BeautifulSoup
 from pprint import pprint
