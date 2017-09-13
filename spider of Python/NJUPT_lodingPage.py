@@ -6,8 +6,10 @@ import bs4
 from bs4 import BeautifulSoup
 
 def getPage(url):
+	headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36'}
 	try:
-		r=requests.get(url,timeout=30)
+		r=requests.get(url,timeout=30,headers=headers)
 		r.raise_for_status()
 		r.encoding=r.apparent_encoding
 		return r.text
@@ -16,22 +18,13 @@ def getPage(url):
 
 def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
-
+	  
 	for tbody in soup.find_all(class_="listColumn wrapper"):
 		for a in soup.find_all('a'):
 			print(a.string)
 		for link in soup.find_all('a'):
 	   		print("http://www.njupt.edu.cn"+link.get('href'))
 
-    
-	'''
-	for child in soup.table.children:
-		print (child.name)
-	if isinstance(tbody,bs4.element.Tag):
-		tds=tbody('td')
-		newsList=ulist.append([tds[0].string,tds[1].string])
-		print(newsList)
-	'''
 
 def main():
 	ulist=[]
