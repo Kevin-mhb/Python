@@ -1,4 +1,9 @@
-#抓取南邮通知中心的通知列表，并且输出连接
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date    : 2017-09-19 20:00:30
+# @Author  : kevin ma (mahaibin97@gmail.com)
+# @Link    : http://www.aduxingzhe.com
+# @Version : $Id$
 
 import requests
 import re
@@ -18,12 +23,17 @@ def getPage(url):
 
 def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
-	  
-	for tbody in soup.find_all(class_="listColumn wrapper"):
-		for a in soup.find_all('a'):
-			print(a.string)
-		for link in soup.find_all('a'):
-	   		print("http://www.njupt.edu.cn"+link.get('href'))
+
+	links_part = soup.find_all('table',align="left")  
+    
+	for links in links_part:
+		a = links.find_all('a')
+		for one in a:
+			href = one.attrs['href']
+			news_title = one.get_text()
+			print(news_title,end="")
+			print("\thttp://www.njupt.edu.cn"+href,end="\n\n")
+	return href,news_title
 
 
 def main():
@@ -32,4 +42,9 @@ def main():
 	html=getPage(url)
 	accessHtml(html,ulist)
 
+
+
+
 main()
+
+

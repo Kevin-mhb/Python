@@ -16,7 +16,7 @@ news_data_title = []
 #    pages_list = []
 #    pages = 'http://news.cnstock.com/news/sns_yw/'+str(item)
 #    for page in pages:
-#        pages_list.append(page)
+#       pages_list.append(page)
 page_url = ['{}{}'.format('http://news.cnstock.com/news/sns_yw/',page) for page in range(1,2)]#获得第1页所有的url，也可以改为（1,100）
 
 

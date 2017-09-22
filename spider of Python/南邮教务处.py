@@ -1,9 +1,15 @@
-#抓取南邮通知中心的通知列表，并且输出连接
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date    : 2017-09-19 20:00:30
+# @Author  : kevin ma (mahaibin97@gmail.com)
+# @Link    : http://www.aduxingzhe.com
+# @Version : $Id$
 
 import requests
 import re
 import bs4
 from bs4 import BeautifulSoup
+
 
 def getPage(url):
 	headers = {
@@ -16,25 +22,47 @@ def getPage(url):
 	except:
 		return "Error!\n"
 
+
 def accessHtml(html,ulist):
 	soup=BeautifulSoup(html,'html.parser')
 
-	links_part = soup.find_all('table',align="left")  
+	links_part = soup.find_all('div',frag="窗口4")  
     
 	for links in links_part:
 		a = links.find_all('a')
 		for one in a:
 			href = one.attrs['href']
+			href_list.append(href)
 			news_title = one.get_text()
+			news_title_list.append(news_title)
 			print(news_title,end="")
-			print("\thttp://www.njupt.edu.cn"+href,end="\n\n")
+			print("\tjwc.njupt.edu.cn"+href,end="\n\n")
+	return href_list,news_title_list
+
+'''
+def getText(news_title_list，href_list):
+	for href in href_list:
+		html=requests.get(href)
+		metadata=html.text
+		soup=BeautifulSoup(metadata,"html.parser")
+		file=soup.find_all('meta',"name="description"")
+		text=file.attrs['content']
+		print(text)
+'''
 
 
 def main():
+	news_title_list=[]
+	href_list=[]
 	ulist=[]
-	url="http://www.njupt.edu.cn/72/list.htm"
+	url="http://jwc.njupt.edu.cn/1594/list.htm"
 	html=getPage(url)
 	accessHtml(html,ulist)
+	print(len(news_title_list))
+	print(len(href_list))
+	print(news_title_list[6]+href_list[6])
+	#getText(news_title_list,href_list)
+
 
 main()
 
