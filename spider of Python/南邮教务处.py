@@ -23,7 +23,7 @@ def getPage(url):
 		return "Error!\n"
 
 
-def accessHtml(html,ulist):
+def accessHtml(html,news_title_list,href_list):
 	soup=BeautifulSoup(html,'html.parser')
 
 	links_part = soup.find_all('div',frag="窗口4")  
@@ -37,35 +37,31 @@ def accessHtml(html,ulist):
 			news_title_list.append(news_title)
 			print(news_title,end="")
 			print("\tjwc.njupt.edu.cn"+href,end="\n\n")
-	return href_list,news_title_list
+	return news_title_list,href_list
 
-'''
-def getText(news_title_list，href_list):
+
+def getText(news_title_list,href_list):
 	for href in href_list:
 		html=requests.get(href)
 		metadata=html.text
 		soup=BeautifulSoup(metadata,"html.parser")
-		file=soup.find_all('meta',"name="description"")
+		file=soup.find_all('meta',name="description")
 		text=file.attrs['content']
 		print(text)
-'''
 
 
 def main():
 	news_title_list=[]
 	href_list=[]
-	ulist=[]
 	url="http://jwc.njupt.edu.cn/1594/list.htm"
 	html=getPage(url)
-	accessHtml(html,ulist)
+	accessHtml(html,news_title_list,href_list)
 	print(len(news_title_list))
 	print(len(href_list))
 	print(news_title_list[6]+href_list[6])
-	#getText(news_title_list,href_list)
+	getText(news_title_list,href_list)
 
 
-main()
-
-
-
+if __name__=='__main__':
+	main()
 
