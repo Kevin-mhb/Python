@@ -41,13 +41,18 @@ def accessHtml(html,news_title_list,href_list):
 
 
 def getText(news_title_list,href_list):
-	for href in href_list:
-		html=requests.get(href)
-		metadata=html.text
-		soup=BeautifulSoup(metadata,"html.parser")
-		file=soup.find_all('meta',name="description")
-		text=file.attrs['content']
-		print(text)
+	dicto={}
+	keys=news_title_list
+	values=href_list
+	dicto=dict(zip(keys,values))
+	print(dicto)
+	file_news = open('C:/Users/马海斌/Desktop/文件/programing/GitHub/Python/spider of Python/南邮教务处.txt',"w")
+	for (k,v) in dicto.items():
+		#print(k+"http://jwc.njupt.edu.cn/"+v+"\n\n")#测试
+		text=k+"http://jwc.njupt.edu.cn/"+v+"\n\n"
+		file_news.write(text)
+	
+	file_news.close()
 
 
 def main():
